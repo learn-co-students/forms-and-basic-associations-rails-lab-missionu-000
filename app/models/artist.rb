@@ -1,3 +1,5 @@
 class Artist < ActiveRecord::Base
-  # add associations here
+  validates :name, presence: true
+  has_many :songs
+  has_many :genres, through: :songs
 end
